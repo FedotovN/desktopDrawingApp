@@ -254,13 +254,17 @@ canvas{
 		height: 300px;
 		gap: 10px
 	}
-	.buttons button{
-		padding: 15px;
+	.shapes, .options{
+		padding: 10px;
+		transform: scale(.9)
+	}
+}
+@media(max-width: 1200px){
+	.shapes, .options{
+		padding: 10px;
+		transform: scale(.8)
 	}
 	.buttons{
-		gap: 30px;
-	}
-	.brushes .row{
-		gap: 15px;
+		gap: 10px;
 	}
 }
