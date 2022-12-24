@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Drawing app</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div id="cursor">
+		</div>
+		<div id="blank"></div>
+		<div class="settings inactive" id="settings">
+			<div id = "settingsTab">
+				<div class="burger_icon">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="shapes" id ="shapes">
+				<img src="images/shapes-solid.svg" alt="">
+				<h3>Shapes</h3>
+				<ul>
+					<li class="option" id = "triangle">
+						<img src="images/triangle.png"alt="">
+						<label for="shape" id="triangle">Triangle</label>
+					</li>
+					<li class="option" id = "rectangle">
+						<img src="images/square.png"alt="">
+						<label for="shape" id="square">Rectangle</label>
+					</li>
+					<li class="option" id = "circle">
+						<img src="images/oval.png" alt="">
+						<label for="shape">Circle</label>
+					</li>
+					<li class="option" id = "line">
+						<img src="images/line-segment.png" alt="">
+						<label for="shape">Line</label>
+					</li>
+				</ul>
+			</div>
+			<div class="options">
+				<img src="images/gears-solid.svg" alt="">
+				<h3>Options</h3>
+				<div class="content">
+					<div class="brush_size_slider">
+					<h4>Brush size: <input type="text" id="textSize"></input></h4>
+					<input type="range" max="100" min="1" step="1" value = "4" id="sizeRange">
+					</div>
+					<div class="colors">
+					<h4>Color</h4>
+					<ul>
+						<li>
+							<a href="#" class="colorPreset" style="background-color: red;"></a>
+						</li>
+						<li>
+							<a href="#" class="colorPreset" style="background-color: green;"></a>
+						</li>
+						<li>
+							<a href="#" class="colorPreset" style="background-color: blue;"></a>
+						</li>
+						<li>
+							<a href="#" class="colorPreset" style="background-color: #413b4b;">
+								<input type="color" id="custom">
+							</a>	
+						</li>
+					</ul>
+					</div>
+					<div class="brushes" id ="brushes">
+						<h4>Brushes</h4>
+						<div class="row">
+							<div id="brush" class="option">
+								<img src="images/paintbrush-solid.svg" alt="Brush">
+							</div>
+							<div id="eraser" class="option">
+								<img src="images/eraser-solid.svg" alt="eraser">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<button id = "clear">Clear canvas</button>
+					<button id = "save">Save image</button>
+				</div>
+			</div>
+		</div>
+		<main id="main">
+			<canvas id="canvas"></canvas>
+		</main>
+		<script src="js/tab.js"></script>
+		<script src="js/options.js"></script>
+		<script src="js/drawing.js"></script>
+		<script src="js/cursor.js"></script>
+	</body>
+</html>

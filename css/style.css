@@ -1,0 +1,251 @@
+body{
+	position: relative;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: #413b4b;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+#cursor{
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	z-index: 10;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0);
+	border: 2px solid rgb(77, 47, 78);
+}
+#blank{
+	z-index: -1;
+	transition: .4s;
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	background-color: black;
+	opacity: 0;
+}
+ul{
+	user-select: none;
+	list-style-type: none;
+}
+label{
+	user-select: none;
+	cursor: pointer;
+}
+.settings{
+	z-index: 10;
+	position: absolute;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 20px;
+	height: 650px;
+	width: 280px;
+	background-color: #fff;
+}
+.active{
+	transform: translateX(0);
+	box-shadow: 2px -2px 50px #000000;
+}
+.inactive{
+	transform: translateX(-280px);
+	box-shadow: none;
+}
+#settingsTab{
+	position: absolute;
+	right: -30px;
+	bottom: calc((100% - 120px)/2);
+	height: 200px;
+	width: 30px;
+	background-color: #fff;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.burger_icon{
+	position: relative;
+	padding-left: 5px;
+	height: 100%;
+}
+.burger_icon span{
+	position: absolute;	
+	top: calc(50%);
+	display: block;
+	width: 20px;
+	border-bottom: 3.5px solid #413b4b;
+}
+.burger_icon span:first-child{
+	top: calc(50% - 7px);
+}
+.burger_icon span:last-child{
+	top: calc(50% + 7px);
+}
+.settings .content{
+	margin-left: 36px;
+}
+main{
+	background-color: #352944;
+	height: 100%;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .3s;
+}
+.settings{
+	height: 100%;
+	transition: .4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.shapes, .options{
+	padding: 30px;
+}
+.shapes img{
+	height: 20px;
+	display: inline;
+}
+.shapes h3{
+	display: inline;
+	margin-left: 10px;
+}
+.shapes ul{
+	margin: 0;
+	padding: 0;
+}
+.shapes ul li{
+	margin-top: 15px;
+}
+.shapes ul li input{
+	transform: scale(1.5);
+	margin-right: 10px;
+}
+.options{
+	flex: 1;
+}
+.options img{
+	display: inline;
+	height: 20px;
+}
+.options h3{
+	margin-left: 6.6px;
+	display: inline;
+}
+.option img, label{
+	transition: .1s;
+}
+.brush_size_slider{
+	padding-top: 16px;
+}
+.brush_size_slider input[type="range"]{
+
+	width: 150px;
+}
+.brush_size_slider input[type="text"]{
+	color: #000;
+	border: none;
+	width: 30px;
+}
+.brush_size_slider h4{
+	padding: 0;
+	margin: 0;
+	padding-bottom: 10px;
+}
+.colors{
+	padding-top: 16px;
+
+}
+.colors h4{
+	margin: 0;
+}
+.colors ul{
+	margin: 0;
+	padding: 0;
+	padding-top: 15px;
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 20px;
+}
+.colors a{
+	display: block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	transition: .2s;
+}
+#custom{
+	opacity: 0;
+	cursor: pointer;
+	display: block;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+}
+
+.colors a:is(:hover, .chosen){
+	border: 2px solid rgb(56, 56, 56);
+}
+.brushes .row{
+	display: flex;
+	flex-flow: row;
+	gap: 30px;
+}
+.brushes .row img{
+	height: 30px;
+	cursor: pointer;
+}
+canvas{
+	height: 600px;
+	width: 800px;
+	background-color: white;
+	transition: .3s;
+}
+.option label{
+	margin-left: 8px;
+	margin-bottom: 8px;
+	padding: 6px;
+}
+.option:is(:hover, .option_chosen) img{
+	filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(980deg) brightness(100%) contrast(100%);
+	transform: scale(1.1);
+}
+.option:is(.option:is(:hover, .option_chosen)) :where(label){
+	color: #352944;
+	background-color: #21202234;
+}
+.buttons{
+	margin-top: 50px;
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 50px;
+
+}
+.buttons button{
+	padding: 20px;
+	border-radius: 8px;
+	border: none;
+	font-family: monospace;
+	letter-spacing: 1px;
+	font-weight: bold;
+	transition: .3s;
+}
+.buttons button:nth-child(1){
+	background-color: #e4404d;
+}
+.buttons button:nth-child(2){
+	background-color: #40e471;
+}
+.buttons button:nth-child(1):hover{
+	letter-spacing: 1.4px;
+	background-color: #cf1928;
+	box-shadow: 3px 3px 15px black;
+}
+.buttons button:nth-child(2):hover{
+	letter-spacing: 1.4px;
+	background-color: #1ce95a;
+	box-shadow: 3px 3px 15px black;
+}
