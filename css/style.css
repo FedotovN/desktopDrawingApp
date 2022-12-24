@@ -103,6 +103,7 @@ main{
 }
 .shapes, .options{
 	padding: 30px;
+	transform: scale(.9)
 }
 .shapes img{
 	height: 20px;
