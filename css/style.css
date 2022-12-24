@@ -156,7 +156,7 @@ main{
 	padding-bottom: 10px;
 }
 .colors{
-	padding-top: 16px;
+	padding-top: 8px;
 
 }
 .colors h4{
@@ -219,11 +219,10 @@ canvas{
 	background-color: #21202234;
 }
 .buttons{
-	margin-top: 50px;
+	margin-top: 20px;
 	display: flex;
 	flex-flow: column nowrap;
-	gap: 50px;
-
+	gap: 20px;
 }
 .buttons button{
 	padding: 20px;
@@ -264,7 +263,7 @@ canvas{
 		transform: scale(.8)
 	}
 	.buttons{
-		gap: 10px;
+		gap: 5px;
 	}
 	.buttons button{
 		padding: 15px;
