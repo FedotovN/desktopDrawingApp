@@ -249,3 +249,18 @@ canvas{
 	background-color: #1ce95a;
 	box-shadow: 3px 3px 15px black;
 }
+@media(max-width: 1400px){
+	.settings{
+		height: 300px;
+		gap: 10px
+	}
+	.buttons button{
+		padding: 15px;
+	}
+	.buttons{
+		gap: 30px;
+	}
+	.brushes .row{
+		gap: 15px;
+	}
+}
