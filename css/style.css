@@ -250,22 +250,23 @@ canvas{
 	background-color: #1ce95a;
 	box-shadow: 3px 3px 15px black;
 }
-@media(max-width: 1400px){
+@media(max-width: 1600px){
 	.settings{
-		height: 300px;
 		gap: 10px
 	}
 	.shapes, .options{
 		padding: 10px;
-		transform: scale(.9)
 	}
 }
 @media(max-width: 1200px){
 	.shapes, .options{
-		padding: 10px;
+		padding: 5px;
 		transform: scale(.8)
 	}
 	.buttons{
 		gap: 10px;
+	}
+	.buttons button{
+		padding: 15px;
 	}
 }
