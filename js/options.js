@@ -6,13 +6,13 @@ let size = doc.getElementById("sizeRange"),
     brushOptions = brushes.querySelectorAll(".option"),
     customColor = doc.getElementById("custom"),
     colorOptions = doc.querySelectorAll(".colorPreset"),
-    lastBrushColor = "#000"
+    chosenBrushColor = "#000"
 shapeOptions.forEach(element => {
     element.addEventListener(("click"), (e)=>{
         console.log(e.currentTarget.id)
         element.classList.add("option_chosen")
         selectedTool = element.id
-        brushColor = lastBrushColor
+        brushColor = chosenBrushColor
         shapeOptions.forEach(el => {
             if(el != element) el.classList.remove("option_chosen")
         })
@@ -28,11 +28,10 @@ brushOptions.forEach(element => {
         switch(element.id){
             case "brush":
                 selectedTool = "brush"
-                brushColor = lastBrushColor
+                brushColor = chosenBrushColor
                 break
             case "eraser":
                 selectedTool = "eraser"
-                lastBrushColor = brushColor
                 brushColor = "#fff"
                 break
         }
@@ -49,6 +48,7 @@ colorOptions.forEach(element => {
         colorOptions.forEach(el =>{el.classList.remove("chosen")})
         element.classList.add("chosen")
         brushColor = element.style.backgroundColor
+        chosenBrushColor = element.style.backgroundColor
     })
 })
 customColor.addEventListener(("change"), e=>{
