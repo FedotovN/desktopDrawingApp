@@ -17,7 +17,7 @@ canv.style.cursor = "none"
 canv.height = canv.offsetHeight
 canv.width = canv.offsetWidth
 setBckg = () => {
-    ctx.fillColor = "#fff"
+    ctx.fillStyle = "#fff"
     ctx.fillRect(0,0,canv.width, canv.height)
 }
 setBckg()
