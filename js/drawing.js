@@ -16,6 +16,11 @@ let prevMouseX, prevMouseY
 canv.style.cursor = "none"
 canv.height = canv.offsetHeight
 canv.width = canv.offsetWidth
+setBckg = () => {
+    ctx.fillColor = "#fff"
+    ctx.fillRect(0,0,canv.width, canv.height)
+}
+setBckg()
 drawTriangle = (e) => {
     ctx.beginPath()
     ctx.moveTo(prevMouseX, prevMouseY)
@@ -47,6 +52,7 @@ saveBtn.addEventListener(('click'), (e)=>{
 })
 clearBtn.addEventListener(('click'), ()=>{
     ctx.clearRect(0,0, canv.width, canv.height)
+    setBckg()
 })
 canv.addEventListener(('mousedown'), (e)=>{
     isDrawing = true
