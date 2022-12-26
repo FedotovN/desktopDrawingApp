@@ -64,6 +64,10 @@ canv.addEventListener(('mouseup'), ()=>{
     isDrawing = false
     ctx.beginPath()
 })
+canv.addEventListener(("mouseleave"), ()=>{
+    isDrawing = false
+    ctx.beginPath()
+})
 canv.addEventListener(('mousemove'),(e)=>{
     if(!isDrawing) return
     ctx.putImageData(snapshot, 0,0)
